@@ -1,4 +1,4 @@
-angular.module('sharedAssets').
+angular.module('classhub').
 factory('participantsFactory', participantsFactory);
 
 participantsFactory.$inject = ['dataFactory'];
