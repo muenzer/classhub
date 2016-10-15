@@ -245,17 +245,7 @@ service('registrationService', RegistrationService);
 function RegistrationService() {
   var service = this;
 
-  service.newRegistration = function (classItem, newParticipant) {
-    newParticipant = service._addClassInfo(classItem, newParticipant);
-
-    var newStatus = service._newStatus(classItem.session.waitlist);
-
-    newParticipant = service._updateRegistration(newParticipant, newStatus);
-
-    return newParticipant;
-  };
-
-  service._addClassInfo = function(classItem, newParticipant) {
+  service.addClassInfo = function(classItem, newParticipant) {
 
     newParticipant.CourseSession = classItem.id + "#" + classItem.session.id;
     newParticipant.Cost = classItem.price;
@@ -266,7 +256,7 @@ function RegistrationService() {
     return newParticipant;
   };
 
-  service._newStatus = function (waitlist) {
+  service.newStatus = function (waitlist) {
     var newStatus;
     if(waitlist) {
       newStatus = 'Wait List';
@@ -293,7 +283,7 @@ function RegistrationService() {
     return dueDateMS;
   };
 
-  service._updateStatus = function(participant, newStatus) {
+  service.updateStatus = function(participant, newStatus) {
     var classDate = participant.Date;
     var number = participant.Number;
     var dueDate;

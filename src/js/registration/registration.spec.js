@@ -38,7 +38,7 @@ describe("A registration service that", function () {
     });
 
     it("should return a participant", function () {
-      newParticipant = registrationService._addClassInfo(classItem, newParticipant);
+      newParticipant = registrationService.addClassInfo(classItem, newParticipant);
 
       expect(newParticipant.CourseSession).toBe("999#999");
       expect(newParticipant.Cost).toBe(75);
@@ -47,11 +47,11 @@ describe("A registration service that", function () {
 
   describe("checks wait list", function () {
     it("should return a Wait List status", function () {
-      newStatus = registrationService._newStatus(true);
+      newStatus = registrationService.newStatus(true);
       expect(newStatus).toBe("Wait List");
     });
     it("should return a Registered status", function () {
-      newStatus = registrationService._newStatus(false);
+      newStatus = registrationService.newStatus(false);
       expect(newStatus).toBe("Registered");
     });
   });
@@ -114,7 +114,7 @@ describe("A registration service that", function () {
 
     it("should return a participant for a new class", function() {
 
-      var participant = registrationService._updateStatus(item, 'Registered');
+      var participant = registrationService.updateStatus(item, 'Registered');
 
       expect(participant.Template).toEqual(2);
       expect(participant.Payment).toEqual(100);
@@ -125,7 +125,7 @@ describe("A registration service that", function () {
     it("should return a participant for a new workshop", function() {
       item.Type = "Workshop";
 
-      var participant = registrationService._updateStatus(item, 'Registered');
+      var participant = registrationService.updateStatus(item, 'Registered');
 
       expect(participant.Template).toEqual(4);
       expect(participant.Payment).toEqual(400);
@@ -134,7 +134,7 @@ describe("A registration service that", function () {
     });
     it("should return a participant for a waitlist", function() {
 
-      var participant = registrationService._updateStatus(item, 'Wait List');
+      var participant = registrationService.updateStatus(item, 'Wait List');
 
       expect(participant.Template).toEqual(3);
       expect(participant.EmailFlag).toBe(true);
@@ -142,7 +142,7 @@ describe("A registration service that", function () {
     it("should return a welcome message", function() {
 
       item.PaymentStatus = "Wait List";
-      var participant = registrationService._updateStatus(item, 'Registered');
+      var participant = registrationService.updateStatus(item, 'Registered');
 
       expect(participant.Message).toBe("Yay, a space has opened up and you are now registered for");
       expect(participant.EmailFlag).toBe(true);
@@ -150,7 +150,7 @@ describe("A registration service that", function () {
     });
     it("should return a participant for overdue", function() {
 
-      var participant = registrationService._updateStatus(item, 'Overdue');
+      var participant = registrationService.updateStatus(item, 'Overdue');
 
       expect(participant.Template).toEqual(6);
       expect(participant.DueDate).toBeDefined();
