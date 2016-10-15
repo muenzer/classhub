@@ -283,11 +283,12 @@ function RegistrationService() {
     return dueDateMS;
   };
 
-  service.updateStatus = function(participant, newStatus) {
-    var classDate = participant.Date;
-    var number = participant.Number;
+  service.updateStatus = function(participantData, newStatus) {
+    var classDate = participantData.Date;
+    var number = participantData.Number;
     var dueDate;
 
+    var participant = {};
     participant.EmailFlag = false;
 
     switch(newStatus) {
@@ -299,18 +300,18 @@ function RegistrationService() {
       break;
       case "Registered":
       participant.EmailFlag = true;
-      if(participant.Type === 'Class') {
+      if(participantData.Type === 'Class') {
         participant.Template = 2;
         participant.Payment = 50 * number;
         dueDate = service._calcDueDate(classDate, 45, 3);
         participant.DueDate = dueDate;
-      } else if (participant.Type === 'Workshop') {
+      } else if (participantData.Type === 'Workshop') {
         participant.Template = 4;
-        participant.Payment = participant.Cost * number;
+        participant.Payment = participantData.Cost * number;
         dueDate = service._calcDueDate(classDate, 14, 2);
         participant.DueDate = dueDate;
       }
-      if(participant.PaymentStatus === 'Wait List') {
+      if(participantData.PaymentStatus === 'Wait List') {
         participant.Message = "Yay, a space has opened up and you are now registered for";
       } else {
         participant.Message = "Thank you for registering for";
