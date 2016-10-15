@@ -1,0 +1,31 @@
+[
+	{
+		"title": "Clay Classes",
+		"key": 1,
+		"content": "Ever wanted to try throwing on the potters wheel? Or have you done pottery as a hobby in the past and want a chance to continue your craft?\n\nTake a class at TRö.\n\nClasses range from four week “Try the wheel” to open studio sessions.\n\n[See class descriptions](listings/#clay-classes)",
+		"order": 1,
+		"image": "wheel_1.png"
+	},
+	{
+		"title": "Workshops",
+		"key": 2,
+		"content": "Want to make a gift for a friend? Have a fun evening out with friends?\n\nTake a workshop at TRö.\n\nEach workshop will feature a project that can be completed in one session. Seasonal workshops like christmas ornaments or summer plant tags will be mixed with projects like lace textured dishes, house numbers and plaques.\n\n[See class descriptions](listings/#workshops)",
+		"order": 2,
+		"image": "graydish_1.png"
+	},
+	{
+		"title": "Kids and Family Classes",
+		"key": 3,
+		"content": "Want to have a fun afternoon with your family? Or get your toddler started in Art?\n\nTake a workshop at TRö.\n\nEach workshop will center around a single project. Examples include Halloween pumpkins, Mother’s Day gifts and Family Hand Prints.\n\n[See class descriptions](listings/#kids-and-family-classes)",
+		"order": 3,
+		"image": "natalie-clay_1.png"
+	},
+	{
+		"title": "Private Events",
+		"key": 4,
+		"content": "Girls night out, corporate team building or a fun activity for out of town guests. We can host a fun, messy and creative afternoon (or evening) for you and your guests.",
+		"order": 4,
+		"image": "Events_top.png",
+		"event": true
+	}
+]

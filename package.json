@@ -1,0 +1,39 @@
+{
+  "name": "classhub module",
+  "version": "0.1.0",
+  "devDependencies": {
+    "angular-resource": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "connect-modrewrite": "^0.9.0",
+    "grunt": "~0.4.1",
+    "grunt-aws-s3": "^0.14.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-connect": "^0.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-express": "~1.0.0-beta2",
+    "grunt-inject": "^0.1.1",
+    "grunt-karma": "^2.0.0",
+    "grunt-newer": "^1.2.0",
+    "grunt-open": "~0.2.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "load-grunt-tasks": "^3.5.0",
+    "matchdep": "~0.1.2"
+  },
+  "dependencies": {
+    "angular-xeditable": "^0.2.0",
+    "angular": "^1.5.8",
+    "angular-markdown-filter": "^1.3.2",
+    "angular-mocks": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "checklist-model": "^0.10.0",
+    "cloudinary-angular": "^1.0.0"
+  }
+}
