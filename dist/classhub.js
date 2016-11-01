@@ -252,6 +252,7 @@ function RegistrationService() {
     newParticipant.ClassName = classItem.title;
     newParticipant.Date = classItem.session.date;
     newParticipant.Type = classItem.type;
+    newParticipant.SessionName = classItem.session.title;
 
     return newParticipant;
   };
