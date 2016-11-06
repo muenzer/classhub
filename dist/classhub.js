@@ -268,20 +268,27 @@ function RegistrationService() {
     return newStatus;
   };
 
-  service._calcDueDate = function(classDateMS, cutoffDays, graceDays) {
+  service._calcDueDate = function(classDateString, cutoffDays, graceDays) {
     var today = Date.now();
-    var dueDateMS = classDateMS - (cutoffDays * 24*3600*1000);
+    var classDate = new Date(classDateString);
+    var dueDate = new Date(+classDate);
+    dueDate.setDate(dueDate.getDate() - cutoffDays);
 
-    if(today > dueDateMS) { //Too close to cutoff
-      dueDateMS = today + (graceDays * 24*3600*1000);
-      if(dueDateMS > classDateMS) {
-        dueDateMS = classDateMS;
-      } if(dueDateMS < today) {
-        dueDateMS = today;
+    if(today > dueDate) { //Too close to cutoff
+      dueDate = new Date(+today);
+      dueDate.setDate(dueDate.getDate() + graceDays);
+      if(dueDate > classDate) {
+        dueDate = new Date(+classDate);
+      } if(dueDate < today) {
+        dueDate = new Date(+today);
       }
     }
 
-    return dueDateMS;
+    dueDate.setHours(0, -dueDate.getTimezoneOffset(), 0, 0);
+    dueDateString = dueDate.toISOString().substr(0,10);
+    //dueDateString = dueDate.getFullYear() + '-' + (dueDate.getMonth() + 1) + '-' + dueDate.getDate();
+    console.log(dueDateString);
+    return dueDateString;
   };
 
   service.updateStatus = function(participantData, newStatus) {
